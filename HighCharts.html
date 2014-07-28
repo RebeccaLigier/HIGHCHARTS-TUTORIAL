@@ -4,10 +4,138 @@
 
 <head>
 
+<title> NYC ARRESTS </title>
+
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
 <script src="http://code.highcharts.com/highcharts.js"></script>
 
+<style>
+
+#wrapper { 
+	
+	position: relative;
+}
+
+#container{
+
+	width: 900px;
+	height: 600px;
+	/*border: 3px solid black;*/
+	position: absolute;
+	left: 50%;
+	margin: 0 0 0 -450px;
+	box-shadow: 10px 10px 5px #888888;
+
+}
+
+body{
+
+	background: url(prison.png);
+	background-repeat: repeat;
+	
+
+}
+
+h1 {
+
+	font-size: 80px;
+	text-align: center;
+}
+
+</style>
 
 </head>
 
-<div id="container" style="width:100%; height:400px;"></div>
+
+
+<body>
+
+<h1> NYC PRISON VISITOR ARRESTS </h1>
+
+<div id="wrapper">
+	<div id="container">
+
+	</div>
+</div>
+
+
+
+
+
+<script>
+
+$(function() {
+
+	$('#container').highcharts({
+
+		chart: {
+
+			type: 'line',
+
+		},
+
+		colors: ['orange'],
+
+
+		title:{
+			
+			text: 'Visitor Arrests'
+		},
+
+		xAxis: {
+			
+			title: { 
+				text : 'Years'
+			},
+
+			categories: [2001,2002,2003,2004,2005,2006,2007,2008,2009,2010]
+		},
+
+		yAxis: {
+
+			title: { 
+				text: 'Number Of Arrests'
+
+			}
+		},
+
+		legend: {enabled: false},
+
+		plotOptions: { 
+
+			series: {
+
+					lineWidth: 6
+
+			}
+
+		},
+
+		series: [{
+
+			name: 'Arrests',
+
+			data: [392, 313, 341, 360, 367, 295, 318, 201, 264, 292]
+
+		}]
+		
+	})
+
+})
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+
+</body>
+
+
